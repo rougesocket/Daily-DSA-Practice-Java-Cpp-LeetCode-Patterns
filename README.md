@@ -44,18 +44,3 @@ This helps in recognizing patterns rather than memorizing solutions.
 - **Focus:** Interview-oriented problem solving
 
 ---
-
-## 🗂️ Repository Structure
-
-dsa-daily/
-│
-├── README.md
-├── Daily-Log.md
-│
-├── LeetCode-Daily/
-│
-├── Patterns/
-│   ├── Two-Pointers/
-│   ├── Sliding-Window/
-│   ├── DFS-BFS/
-│   ├── Dynamic-Programming/
