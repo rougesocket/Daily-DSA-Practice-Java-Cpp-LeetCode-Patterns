@@ -4,7 +4,7 @@
 ![C++](https://img.shields.io/badge/Language-C++-blue)
 ![LeetCode](https://img.shields.io/badge/Platform-LeetCode-yellow)
 ![DSA](https://img.shields.io/badge/Focus-DSA-brightgreen)
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-4-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-5-blue)
 
 A structured repository for daily Data Structures &amp; Algorithms practice using Java and C++, based on LeetCode Daily Challenges and common interview patterns, with clear explanations and optimized solutions.
 This repository focuses not just on solving problems, but on building **strong fundamentals**, writing **clean interview-ready code**, and documenting **clear reasoning and optimizations**.
