@@ -1,8 +1,8 @@
 # 3314. Construct the Minimum Bitwise Array I
 
 **Platform:** LeetCode  
-**Difficulty:** Medium  
-**Pattern:** Bit Manipulation
+**Difficulty:** Easy  
+**Pattern:** Bit Manipulation (Brute Force)
 
 ---
 
@@ -20,51 +20,31 @@ If it is not possible to construct such a value, set `ans[i] = -1`.
 
 ## 💡 Approach
 
-### Key Observations
+### Key Observation
 
-- Except for `2`, **all prime numbers are odd**.
-- For an odd number `x`, `x + 1` is even.
-- In binary representation:
-  - Adding `1` flips the **rightmost `0` bit** to `1`
-  - All trailing `1`s to its right become `0`
-
-Example:
-39 -> 0010 0111
-40 -> 0010 1000
-OR -> 0010 1111
-
-- This means:
-  - To satisfy `a OR (a + 1) = nums[i]`
-  - `nums[i]` must have **at least one `0` bit**
-  - We can construct the smallest possible `a` by:
-    - Finding the **first `0` bit from the right**
-    - Clearing the bit immediately to its left
-
-- **Special Case:**
-  - `nums[i] = 2` (the only even prime)
-  - Its LSB is `0`, and there is no bit to the left → **impossible**
+- The constraints are small enough to allow a **brute-force solution**.
+- Since `ans[i]` must be minimized, we can try all possible values smaller than `nums[i]` and stop at the first valid one.
 
 ---
 
 ## 🧠 Strategy
 
-1. Iterate over the array `nums`
-2. If the value is `2`, append `-1`
-3. Otherwise:
-   - Scan bits from **LSB to MSB**
-   - Find the first `0` bit
-   - Clear the bit immediately to its left
-4. Add the resulting number to `ans`
+1. Iterate over each element in `nums`.
+2. For the current number `x`, try all values `a` from `1` to `x - 1`.
+3. Check if: a OR (a + 1) == x
+4. If a valid `a` is found:
+
+- Assign `ans[i] = a`
+- Stop searching further (to ensure minimality).
+
+5. If no valid value exists, assign `ans[i] = -1`.
 
 ---
 
 ## ⏱️ Complexity Analysis
 
-- **Time Complexity:** `O(N × 32)`  
-  (checking bits for each number)
-
-- **Space Complexity:** `O(1)`  
-  (excluding output array)
+- **Time Complexity:** `O(N × N)`
+- **Space Complexity:** `O(1)` (excluding output array)
 
 Where:
 
@@ -74,6 +54,6 @@ Where:
 
 ## 📝 Learnings
 
-- Binary behavior of `x` and `x + 1` is a powerful tool in bit manipulation problems.
-- Observing patterns in binary transitions often removes the need for brute force.
-- Always handle edge cases early (`2` in this problem).
+- Always analyze constraints before over-optimizing.
+- Brute-force solutions can be perfectly valid when limits are small.
+- Minimization problems often benefit from early stopping.
